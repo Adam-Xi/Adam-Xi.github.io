@@ -1,139 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Linux基本指令</title>
-    <url>/2019/11/11/Linux%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<p>本篇文章中，对Linux中的基本指令的常用用法进行讲解，对于刚接触linux系统的童鞋来说比较友好，不足之处，还望批评指出！</p>
-<p>正文：</p>
-<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>语法：ls [选项] [目录或文件]<br>功能：对于目录，将列出该目录下所有子目录和文件；对于文件，将列出文件的所有信息<br>常用选项：</p>
-<blockquote>
-<p>-a：列出目录下的所有文件，包含隐含文件<br>-l： 列出文件的详细信息<br>-r： 对目录反向排序<br>-t： 以时间排序<br>-R： 递归列出所有子目录下的文件</p>
-</blockquote>
-<h6 id="tips："><a href="#tips：" class="headerlink" title="tips："></a>tips：</h6><p>1、各种选项可以进行组合使用<br>2、这里只列举几种最常用的选项，并不是所有的选项</p>
-<h6 id="用例："><a href="#用例：" class="headerlink" title="用例："></a>用例：</h6><blockquote>
-<p>ls  //列出当前目录下的文件和目录名称<br>ls -a  //列出当前目录下的所有文件和目录名称<br>ls -l   //列出当前目录下的文件和目录的详细信息，可简写为 ll<br>ls -a -l   //列出当前目录下的所有文件和目录的详细信息，可简写为 ls -la<br>ls -l -t    //以时间排序，距现在最近的创建修改时间的文件或目录排在最前面（顶部），简写为 ls -lt<br>ls -l -r -t  //以时间反向排序，距现在最近的文件或目录排在最底部，简写 ls -lrt ，这条命令非常实用方便</p>
-</blockquote>
-<p>注意：该用例中的所有简写方式中的选项组合没有先后之分，且文章往后都默认没有，若有次序之分，会实现说明</p>
-<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>语法：pwd<br>功能：显示用户当前所在的目录，即路径</p>
-<h6 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h6><p>该命令经常单用，显示当前用户所在的目录，且显示的路径是绝对路径</p>
-<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>语法：cd 目录名/<br>功能：改变工作目录，将当前工作目录改变到指定的目录下<br>常用搭配：</p>
-<blockquote>
-<p>cd ~ ： 进入用户的家目录<br>cd - ： 返回上一次访问的目录<br>cd / ： 返回根目录<br>cd /home/adam_xi/workstation/ : 绝对路径<br>cd ./ ： 切换到当前目录（没变）<br>cd ../ ： 切换到上层目录（返回到“父节点”）<br>cd ../test/ ：相对路径<br>cd 目录名/</p>
-</blockquote>
-<h6 id="tips-1"><a href="#tips-1" class="headerlink" title="tips"></a>tips</h6><p>1、在Linux系统中，磁盘上的文件和目录被组织成一棵目录树，每个节点都是目录或文件<br>从目录树的根节点到某个节点的路径称为绝对路径<br>从目录树中的当前节点改变到某个节点的路径称为相对路径<br>2、Linux目录结构中，任一目录下都会有 <strong>.</strong> 和 <strong>..</strong> 两个默认<strong>隐藏目录</strong>, .为当前目录， ..为上层目录</p>
-<h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p>语法：touch [选项] [路径下的文件名]<br>功能：可更改文档或目录的日期时间（创建时间，存取时间），最主要的功能是<strong>创建新文件</strong><br>选项：</p>
-<blockquote>
-<p>-a ： 只更改存取时间<br>-d ： 使用指定的日期时间<br>-m ： 只更改变动时间<br>-r ：  把指定文档或目录的时间日期，全部更改为和参考文档或目录的日期时间相同<br>-t ： 使用指定的日期时间，而非现在的时间</p>
-</blockquote>
-<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>语法：mkdir [选项] [目录名]<br>功能：在当前目录下创建一个目录<br>选项：</p>
-<blockquote>
-<p>-p ： 后面可以跟一个路径名称，若路径中某些目录不存在，加上此选项后，将自动生成不存在的目录，即一次性创建多个目录<br>例：mkdir grap/father/child ：递归创建多个目录</p>
-</blockquote>
-<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>语法：rm [选项] [文件名/目录名]<br>功能：删除文件后目录<br>选项：</p>
-<blockquote>
-<p>-f ： 即使文件属性为只读，也直接删除<br>-i ： 删除前逐一询问确认<br>-r ： 删除目录及以下所有文件</p>
-</blockquote>
-<h6 id="tips-2"><a href="#tips-2" class="headerlink" title="tips"></a>tips</h6><p>1、该操作适用所有使用者<br>2、删除要慎用<br>尤其rm -rf / 一般情况下禁止使用，它会删除linux系统中所有的文件，不要问我为什么知道-_-</p>
-<h3 id="man"><a href="#man" class="headerlink" title="man"></a>man</h3><p>语法：man [选项] [指令名]<br>功能：查看联机手册<br>选项：</p>
-<blockquote>
-<p>-k ： 根据关键字搜索联机帮助<br>num ： 只在第num章节找<br>-a ： 将所有的章节都显示出来</p>
-</blockquote>
-<h6 id="tips-3"><a href="#tips-3" class="headerlink" title="tips"></a>tips</h6><p>1、Linux中有很多的命令，参数，我们不可能全都记住，那么，有一个man的指令查询命令就帮助我们进行查询<br>2、man手册分为八个章节<br>（1）、普通的命令<br>（2）、系统调用,如open,write之类的(通过这个，至少可以很方便的查到调用这个函数，需要加什么头文件)<br>（3）、库函数,如printf,fread<br>（4）、特殊文件,也就是/dev下的各种设备文件<br>（5）、指文件的格式,比如passwd, 就会说明这个文件中各个字段的含义<br>（6）、给游戏留的,由各个游戏自己定义<br>（7）、附件还有一些变量,比如向environ这种全局变量在这里就有说明<br>（8）、系统管理用的命令,这些命令只能由root使用,如ifconfig</p>
-<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><p>语法：cp [选项] [源文件或目录] [目标文件或目录]<br>功能：复制文件或目录<br>常用选项：</p>
-<blockquote>
-<p>-f ： 强制复制，不管文件或目录是否打开<br>-i ： 覆盖文件之前询问用户<br>-r ： 递归处理，将指定目录下的文件与子目录一并处理</p>
-</blockquote>
-<h6 id="tips-4"><a href="#tips-4" class="headerlink" title="tips"></a>tips</h6><p>用于复制文件或目录，如果同时指定两个以上的文件或目录，且最后一个的目的地是另一个已经存在的目录，则它会把前面指定的所有文件或目录复制到此目录中。若同时制定多个文件或目录，而最后的目的地并非一个已存在的目录，则会出现错误信息</p>
-<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>语法：mv [选项] [源文件或目录] [目标文件或目录]<br>功能：<br>1、当第二个参数是目录时，移动操作<br>2、当第二个参数是文件时，重命名操作</p>
-<p>常用选项：</p>
-<blockquote>
-<p>-f ： 如果目标文件已存在，不询问而直接覆盖<br>-i ： 如果目标文件已存在，询问是否覆盖</p>
-</blockquote>
-<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p>语法：cat [选项] [文件]<br>功能：查看目标文件的内容，适合小文件，全部展示<br>常用选项：</p>
-<blockquote>
-<p>-b ： 对非空输出行编号<br>-n ： 对输出的所有行编号<br>-s ： 不输出多行空格</p>
-</blockquote>
-<h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><p>语法：more [选项] [文件]<br>功能：more命令，功能类似cat，适合大文件，分页展示，并且只能向下翻页<br>选项：</p>
-<blockquote>
-<p>-n ： 对输出的所有行编号<br>q ： 退出more</p>
-</blockquote>
-<h3 id="less"><a href="#less" class="headerlink" title="less"></a>less</h3><p>语法：less [选项] [文件]<br>功能：类似more，适合更大的文件，在查看之前不会加载整个文件，且能进行前后翻页</p>
-<p>选项：</p>
-<blockquote>
-<p>-i ： 忽略搜索时的大小写<br>-N ： 显示每行的行号<br>/字符串 ： 向下搜索字符串<br>?字符串 ： 向上搜索字符串<br>n ： 重复前一个搜索，具体与/或?有关<br>N ： 反向重复前一个搜索<br>q ： 退出</p>
-</blockquote>
-<h3 id="head"><a href="#head" class="headerlink" title="head"></a>head</h3><p>语法：head -n&lt;行数&gt; 文件名<br>功能：从头开始展示n行文件内容</p>
-<h3 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h3><p>语法：rear [选项] 文件名<br>功能：从尾开始展示文件内容，常用于日志文件的读取</p>
-<blockquote>
-<p>-f ： 循环读取<br>-n&lt;行数&gt; ： 显示行数</p>
-</blockquote>
-<h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><p>1、date以指定格式显示时间：</p>
-<blockquote>
-<p>[adam_xi@bogon ~]$ date<br>Sun Oct 27 19:01:33 CST 2019</p>
-</blockquote>
-<p>就我而言，感觉date功能查看时间方面挺鸡肋的，所以省去了具体介绍<br>2、date可以设置系统时间，不过当系统联网后，会自动校验回正确时间</p>
-<blockquote>
-<p>date -s //设置当前时间，不过需要root权限</p>
-</blockquote>
-<h3 id="cal"><a href="#cal" class="headerlink" title="cal"></a>cal</h3><p>语法：cal [参数] [月份][年份]<br>功能：用于查看日历等时间信息，如只有一个参数，则表示年份，如有两个参数，则表示月份和年份<br>常用选项：</p>
-<blockquote>
-<p>-3 ： 显示系统前一个月，本月和下一个月的日历<br>-j ： 显示在本年中是第几天<br>-y ：显示当前年份的日历</p>
-</blockquote>
-<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>语法：find 路径名 -选项<br>功能：用于在文件树中查找文件，并做出相应处理<br>常用选项：</p>
-<blockquote>
-<p>-name ： 按照文件名查找文件</p>
-</blockquote>
-<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><p>语法：grep [选项] 搜寻字符串 文件<br>功能：在文件中搜索字符串，将找到的行打印出来<br>常用选项：</p>
-<blockquote>
-<p>-i ： 忽略大小写不同<br>-n ： 输出行号<br>-v ： 反向选择，显示出没有“搜寻字符串”内容的那一行</p>
-</blockquote>
-<h3 id="zip-unzip"><a href="#zip-unzip" class="headerlink" title="zip/unzip"></a>zip/unzip</h3><p>语法：zip&nbsp; [压缩文件.zip]&nbsp; [目录或文件]&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unzip [要解压的压缩文件] &nbsp;[目录或文件名]<br>功能：将目录或文件压缩成zip格式<br>常用选项：</p>
-<blockquote>
-<p>-r ： 递归处理，将指定目录下的所有文件和子目录一并处理</p>
-</blockquote>
-<h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><p>语法：tar [参数] [文件与目录]<br>功能：打包，解包，即处理压缩文件<br>常用选项：</p>
-<blockquote>
-<p>-c ： 建立一个压缩文件<br>-x ： 解开一个压缩文件<br>-z ： 是否需要用gzip算法压缩或解压<br>-j ： 是否需要用bzip2算法压缩或解压<br>-v ： 压缩的过程显示文件<br>-f ： 使用档名，即规定压缩或解压后文件的名称，注意：使用该参数后后面不能再跟其他参数，直接跟文件名<br>-C ： 解压到指定目录<br>综合用法：<br>tar -cvzf 压缩后的文件名称 要压缩的文件名称  //用gzip算法进行压缩，并展示压缩过程<br>tar -xvzf 解压后的文件名称 要解压的文件名称  //解压缩<br>tar -cjzf 压缩后的文件名称 要压缩的文件名称  //用bzip2算法进行压缩，并展示压缩过程<br>tar -xjzf 解压后的文件名称 要解压的文件名称  //解压缩</p>
-</blockquote>
-<h6 id="tips-5"><a href="#tips-5" class="headerlink" title="tips"></a>tips</h6><p>1、一般的压缩算法有gzip和bzip2两种，使用tar命令需要说明使用的哪种算法进行压缩或解压的 -z 或 -j<br>2、用哪种算法压缩的就需要用哪种算法进行解压<br>3、用gzip压缩后的文件若要进行解压，文件名必须为xxx.tar.gz<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用bzip2压缩后的文件若要进行解压，文件名必须为xxx.tar.bz2<br>4、再次强调，参数-f后需要直接跟文件名，不能再跟其他参数，但是-f之前的其他参数可以以任意次序进行混合使用</p>
-<h3 id="bc"><a href="#bc" class="headerlink" title="bc"></a>bc</h3><p>语法：uname [选项]<br>功能：用来获取电脑和操作系统的相关信息，可以显示Linux主机所用的版本，硬件名称等基本信息<br>常用选项</p>
-<blockquote>
-<p>-a 详细展示所有信息</p>
-</blockquote>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Linux基本指令</title>
+      <link href="/2019/11/11/Linux%E6%8C%87%E4%BB%A4/"/>
+      <url>/2019/11/11/Linux%E6%8C%87%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<p>本篇文章中，对Linux中的基本指令的常用用法进行讲解，对于刚接触linux系统的童鞋来说比较友好，不足之处，还望批评指出！</p><p>正文：</p><h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>语法：ls [选项] [目录或文件]<br>功能：对于目录，将列出该目录下所有子目录和文件；对于文件，将列出文件的所有信息<br>常用选项：</p><blockquote><p>-a：列出目录下的所有文件，包含隐含文件<br>-l： 列出文件的详细信息<br>-r： 对目录反向排序<br>-t： 以时间排序<br>-R： 递归列出所有子目录下的文件</p></blockquote><h6 id="tips："><a href="#tips：" class="headerlink" title="tips："></a>tips：</h6><p>1、各种选项可以进行组合使用<br>2、这里只列举几种最常用的选项，并不是所有的选项</p><h6 id="用例："><a href="#用例：" class="headerlink" title="用例："></a>用例：</h6><blockquote><p>ls  //列出当前目录下的文件和目录名称<br>ls -a  //列出当前目录下的所有文件和目录名称<br>ls -l   //列出当前目录下的文件和目录的详细信息，可简写为 ll<br>ls -a -l   //列出当前目录下的所有文件和目录的详细信息，可简写为 ls -la<br>ls -l -t    //以时间排序，距现在最近的创建修改时间的文件或目录排在最前面（顶部），简写为 ls -lt<br>ls -l -r -t  //以时间反向排序，距现在最近的文件或目录排在最底部，简写 ls -lrt ，这条命令非常实用方便</p></blockquote><p>注意：该用例中的所有简写方式中的选项组合没有先后之分，且文章往后都默认没有，若有次序之分，会实现说明</p><h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>语法：pwd<br>功能：显示用户当前所在的目录，即路径</p><h6 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h6><p>该命令经常单用，显示当前用户所在的目录，且显示的路径是绝对路径</p><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>语法：cd 目录名/<br>功能：改变工作目录，将当前工作目录改变到指定的目录下<br>常用搭配：</p><blockquote><p>cd ~ ： 进入用户的家目录<br>cd - ： 返回上一次访问的目录<br>cd / ： 返回根目录<br>cd /home/adam_xi/workstation/ : 绝对路径<br>cd ./ ： 切换到当前目录（没变）<br>cd ../ ： 切换到上层目录（返回到“父节点”）<br>cd ../test/ ：相对路径<br>cd 目录名/</p></blockquote><h6 id="tips-1"><a href="#tips-1" class="headerlink" title="tips"></a>tips</h6><p>1、在Linux系统中，磁盘上的文件和目录被组织成一棵目录树，每个节点都是目录或文件<br>从目录树的根节点到某个节点的路径称为绝对路径<br>从目录树中的当前节点改变到某个节点的路径称为相对路径<br>2、Linux目录结构中，任一目录下都会有 <strong>.</strong> 和 <strong>..</strong> 两个默认<strong>隐藏目录</strong>, .为当前目录， ..为上层目录</p><h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p>语法：touch [选项] [路径下的文件名]<br>功能：可更改文档或目录的日期时间（创建时间，存取时间），最主要的功能是<strong>创建新文件</strong><br>选项：</p><blockquote><p>-a ： 只更改存取时间<br>-d ： 使用指定的日期时间<br>-m ： 只更改变动时间<br>-r ：  把指定文档或目录的时间日期，全部更改为和参考文档或目录的日期时间相同<br>-t ： 使用指定的日期时间，而非现在的时间</p></blockquote><h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>语法：mkdir [选项] [目录名]<br>功能：在当前目录下创建一个目录<br>选项：</p><blockquote><p>-p ： 后面可以跟一个路径名称，若路径中某些目录不存在，加上此选项后，将自动生成不存在的目录，即一次性创建多个目录<br>例：mkdir grap/father/child ：递归创建多个目录</p></blockquote><h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>语法：rm [选项] [文件名/目录名]<br>功能：删除文件后目录<br>选项：</p><blockquote><p>-f ： 即使文件属性为只读，也直接删除<br>-i ： 删除前逐一询问确认<br>-r ： 删除目录及以下所有文件</p></blockquote><h6 id="tips-2"><a href="#tips-2" class="headerlink" title="tips"></a>tips</h6><p>1、该操作适用所有使用者<br>2、删除要慎用<br>尤其rm -rf / 一般情况下禁止使用，它会删除linux系统中所有的文件，不要问我为什么知道-_-</p><h3 id="man"><a href="#man" class="headerlink" title="man"></a>man</h3><p>语法：man [选项] [指令名]<br>功能：查看联机手册<br>选项：</p><blockquote><p>-k ： 根据关键字搜索联机帮助<br>num ： 只在第num章节找<br>-a ： 将所有的章节都显示出来</p></blockquote><h6 id="tips-3"><a href="#tips-3" class="headerlink" title="tips"></a>tips</h6><p>1、Linux中有很多的命令，参数，我们不可能全都记住，那么，有一个man的指令查询命令就帮助我们进行查询<br>2、man手册分为八个章节<br>（1）、普通的命令<br>（2）、系统调用,如open,write之类的(通过这个，至少可以很方便的查到调用这个函数，需要加什么头文件)<br>（3）、库函数,如printf,fread<br>（4）、特殊文件,也就是/dev下的各种设备文件<br>（5）、指文件的格式,比如passwd, 就会说明这个文件中各个字段的含义<br>（6）、给游戏留的,由各个游戏自己定义<br>（7）、附件还有一些变量,比如向environ这种全局变量在这里就有说明<br>（8）、系统管理用的命令,这些命令只能由root使用,如ifconfig</p><h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><p>语法：cp [选项] [源文件或目录] [目标文件或目录]<br>功能：复制文件或目录<br>常用选项：</p><blockquote><p>-f ： 强制复制，不管文件或目录是否打开<br>-i ： 覆盖文件之前询问用户<br>-r ： 递归处理，将指定目录下的文件与子目录一并处理</p></blockquote><h6 id="tips-4"><a href="#tips-4" class="headerlink" title="tips"></a>tips</h6><p>用于复制文件或目录，如果同时指定两个以上的文件或目录，且最后一个的目的地是另一个已经存在的目录，则它会把前面指定的所有文件或目录复制到此目录中。若同时制定多个文件或目录，而最后的目的地并非一个已存在的目录，则会出现错误信息</p><h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>语法：mv [选项] [源文件或目录] [目标文件或目录]<br>功能：<br>1、当第二个参数是目录时，移动操作<br>2、当第二个参数是文件时，重命名操作</p><p>常用选项：</p><blockquote><p>-f ： 如果目标文件已存在，不询问而直接覆盖<br>-i ： 如果目标文件已存在，询问是否覆盖</p></blockquote><h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p>语法：cat [选项] [文件]<br>功能：查看目标文件的内容，适合小文件，全部展示<br>常用选项：</p><blockquote><p>-b ： 对非空输出行编号<br>-n ： 对输出的所有行编号<br>-s ： 不输出多行空格</p></blockquote><h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><p>语法：more [选项] [文件]<br>功能：more命令，功能类似cat，适合大文件，分页展示，并且只能向下翻页<br>选项：</p><blockquote><p>-n ： 对输出的所有行编号<br>q ： 退出more</p></blockquote><h3 id="less"><a href="#less" class="headerlink" title="less"></a>less</h3><p>语法：less [选项] [文件]<br>功能：类似more，适合更大的文件，在查看之前不会加载整个文件，且能进行前后翻页</p><p>选项：</p><blockquote><p>-i ： 忽略搜索时的大小写<br>-N ： 显示每行的行号<br>/字符串 ： 向下搜索字符串<br>?字符串 ： 向上搜索字符串<br>n ： 重复前一个搜索，具体与/或?有关<br>N ： 反向重复前一个搜索<br>q ： 退出</p></blockquote><h3 id="head"><a href="#head" class="headerlink" title="head"></a>head</h3><p>语法：head -n&lt;行数&gt; 文件名<br>功能：从头开始展示n行文件内容</p><h3 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h3><p>语法：rear [选项] 文件名<br>功能：从尾开始展示文件内容，常用于日志文件的读取</p><blockquote><p>-f ： 循环读取<br>-n&lt;行数&gt; ： 显示行数</p></blockquote><h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><p>1、date以指定格式显示时间：</p><blockquote><p>[adam_xi@bogon ~]$ date<br>Sun Oct 27 19:01:33 CST 2019</p></blockquote><p>就我而言，感觉date功能查看时间方面挺鸡肋的，所以省去了具体介绍<br>2、date可以设置系统时间，不过当系统联网后，会自动校验回正确时间</p><blockquote><p>date -s //设置当前时间，不过需要root权限</p></blockquote><h3 id="cal"><a href="#cal" class="headerlink" title="cal"></a>cal</h3><p>语法：cal [参数] [月份][年份]<br>功能：用于查看日历等时间信息，如只有一个参数，则表示年份，如有两个参数，则表示月份和年份<br>常用选项：</p><blockquote><p>-3 ： 显示系统前一个月，本月和下一个月的日历<br>-j ： 显示在本年中是第几天<br>-y ：显示当前年份的日历</p></blockquote><h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>语法：find 路径名 -选项<br>功能：用于在文件树中查找文件，并做出相应处理<br>常用选项：</p><blockquote><p>-name ： 按照文件名查找文件</p></blockquote><h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><p>语法：grep [选项] 搜寻字符串 文件<br>功能：在文件中搜索字符串，将找到的行打印出来<br>常用选项：</p><blockquote><p>-i ： 忽略大小写不同<br>-n ： 输出行号<br>-v ： 反向选择，显示出没有“搜寻字符串”内容的那一行</p></blockquote><h3 id="zip-unzip"><a href="#zip-unzip" class="headerlink" title="zip/unzip"></a>zip/unzip</h3><p>语法：zip&nbsp; [压缩文件.zip]&nbsp; [目录或文件]&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unzip [要解压的压缩文件] &nbsp;[目录或文件名]<br>功能：将目录或文件压缩成zip格式<br>常用选项：</p><blockquote><p>-r ： 递归处理，将指定目录下的所有文件和子目录一并处理</p></blockquote><h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><p>语法：tar [参数] [文件与目录]<br>功能：打包，解包，即处理压缩文件<br>常用选项：</p><blockquote><p>-c ： 建立一个压缩文件<br>-x ： 解开一个压缩文件<br>-z ： 是否需要用gzip算法压缩或解压<br>-j ： 是否需要用bzip2算法压缩或解压<br>-v ： 压缩的过程显示文件<br>-f ： 使用档名，即规定压缩或解压后文件的名称，注意：使用该参数后后面不能再跟其他参数，直接跟文件名<br>-C ： 解压到指定目录<br>综合用法：<br>tar -cvzf 压缩后的文件名称 要压缩的文件名称  //用gzip算法进行压缩，并展示压缩过程<br>tar -xvzf 解压后的文件名称 要解压的文件名称  //解压缩<br>tar -cjzf 压缩后的文件名称 要压缩的文件名称  //用bzip2算法进行压缩，并展示压缩过程<br>tar -xjzf 解压后的文件名称 要解压的文件名称  //解压缩</p></blockquote><h6 id="tips-5"><a href="#tips-5" class="headerlink" title="tips"></a>tips</h6><p>1、一般的压缩算法有gzip和bzip2两种，使用tar命令需要说明使用的哪种算法进行压缩或解压的 -z 或 -j<br>2、用哪种算法压缩的就需要用哪种算法进行解压<br>3、用gzip压缩后的文件若要进行解压，文件名必须为xxx.tar.gz<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用bzip2压缩后的文件若要进行解压，文件名必须为xxx.tar.bz2<br>4、再次强调，参数-f后需要直接跟文件名，不能再跟其他参数，但是-f之前的其他参数可以以任意次序进行混合使用</p><h3 id="bc"><a href="#bc" class="headerlink" title="bc"></a>bc</h3><p>语法：uname [选项]<br>功能：用来获取电脑和操作系统的相关信息，可以显示Linux主机所用的版本，硬件名称等基本信息<br>常用选项</p><blockquote><p>-a 详细展示所有信息</p></blockquote>]]></content>
+      
+      
       <categories>
-        <category>Linux</category>
+          
+          <category> Linux </category>
+          
       </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>command</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>STL之deque</title>
-    <url>/2019/11/11/STL%E4%B9%8Bdeque/</url>
-    <content><![CDATA[<h3 id="deque介绍"><a href="#deque介绍" class="headerlink" title="deque介绍"></a>deque介绍</h3><p>1、deque是动态大小的序列式容器，可以向两端进行扩容或压缩<br>2、特定的库可以以不同的方式实现deque，但通常都是一种动态数组。不论在何种情况下，它都允许通过随机访问迭代器直接访问单个元素<br>3、deque提供了一些与vector相似的功能，但deque在头部和尾部进行数据插入和删除操作更加高效。与vector不同的是，deque不能保证所有元素都存储在连续的空间中，在deque中通过指针加偏移量的方式访问元素可能导致非法的操作</p>
-<p>就我而言，其实，相比其他容器而言，deque比较“鸡肋”（个人观点），若要说遍历元素，用vector足以完成，若要说插入删除，list也够用，而且相比来说，deque性能在这两方面性能较差<br>  <img src="https://img-blog.csdnimg.cn/20191025194344163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> </p>
-<h3 id="deque的接口"><a href="#deque的接口" class="headerlink" title="deque的接口"></a>deque的接口</h3><p>  <img src="https://img-blog.csdnimg.cn/20191025194441955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> </p>
-<h3 id="deque的应用场景"><a href="#deque的应用场景" class="headerlink" title="deque的应用场景"></a>deque的应用场景</h3><p>deque在序列式容器中比较鸡肋，因为如果只是简单的存储元素，使用vector即可，如果对元素任意位置进行插入或者删除操作比较多，使用list即可，所以一般很少去使用deque，它最大的应用，就是作为标准库中stack和queue的底层结构<br>详见<a href="https://blog.csdn.net/qq_43746320/article/details/102749009">库函数stack的模拟实现</a>和<a href="https://blog.csdn.net/qq_43746320/article/details/102749043">库函数queue的模拟实现</a></p>
-<h1 id="THE-END"><a href="#THE-END" class="headerlink" title="THE END"></a>THE END</h1>]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/11/11/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> command </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>STL之deque</title>
+      <link href="/2019/11/11/STL%E4%B9%8Bdeque/"/>
+      <url>/2019/11/11/STL%E4%B9%8Bdeque/</url>
+      
+        <content type="html"><![CDATA[<h3 id="deque介绍"><a href="#deque介绍" class="headerlink" title="deque介绍"></a>deque介绍</h3><p>1、deque是动态大小的序列式容器，可以向两端进行扩容或压缩<br>2、特定的库可以以不同的方式实现deque，但通常都是一种动态数组。不论在何种情况下，它都允许通过随机访问迭代器直接访问单个元素<br>3、deque提供了一些与vector相似的功能，但deque在头部和尾部进行数据插入和删除操作更加高效。与vector不同的是，deque不能保证所有元素都存储在连续的空间中，在deque中通过指针加偏移量的方式访问元素可能导致非法的操作</p><p>就我而言，其实，相比其他容器而言，deque比较“鸡肋”（个人观点），若要说遍历元素，用vector足以完成，若要说插入删除，list也够用，而且相比来说，deque性能在这两方面性能较差<br>  <img src="https://img-blog.csdnimg.cn/20191025194344163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> </p><h3 id="deque的接口"><a href="#deque的接口" class="headerlink" title="deque的接口"></a>deque的接口</h3><p>  <img src="https://img-blog.csdnimg.cn/20191025194441955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> </p><h3 id="deque的应用场景"><a href="#deque的应用场景" class="headerlink" title="deque的应用场景"></a>deque的应用场景</h3><p>deque在序列式容器中比较鸡肋，因为如果只是简单的存储元素，使用vector即可，如果对元素任意位置进行插入或者删除操作比较多，使用list即可，所以一般很少去使用deque，它最大的应用，就是作为标准库中stack和queue的底层结构<br>详见<a href="https://blog.csdn.net/qq_43746320/article/details/102749009">库函数stack的模拟实现</a>和<a href="https://blog.csdn.net/qq_43746320/article/details/102749043">库函数queue的模拟实现</a></p><h1 id="THE-END"><a href="#THE-END" class="headerlink" title="THE END"></a>THE END</h1>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2019/11/11/hello-world/"/>
+      <url>/2019/11/11/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
