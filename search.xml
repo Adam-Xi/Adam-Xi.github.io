@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++对象(一)</title>
-    <url>/2019/11/17/C++%E5%AF%B9%E8%B1%A1(%E4%B8%80)/</url>
+    <title>C++类与对象(一)</title>
+    <url>/2019/11/17/C++%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1(%E4%B8%80)/</url>
     <content><![CDATA[<p>C语言是面向过程的，关注的是过程，分析出求解问题的步骤，通过函数调用逐步解决问题<br>C++是基于面向对象的，关注的是对象，将一件事情拆分成不同的对象，靠对象之间的交互完成</p>
 <h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>C语言中，结构体只能定义变量，C++中，结构体内不仅可以定义变量，也可以定义函数</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct Person</span><br><span class="line">&#123;</span><br><span class="line">	void SetPersonInfo(const char* name, const char* gender, int age)</span><br><span class="line">	&#123;</span><br><span class="line">		strcpy(_name, name);</span><br><span class="line">		strcpy(_gender, gender);</span><br><span class="line">		_age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	void PrintPersonInfo()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; _name &lt;&lt; &quot; &quot; &lt;&lt; _gender &lt;&lt; &quot; &quot; &lt;&lt; _age &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	char _name[20];</span><br><span class="line">	char _gender[3];</span><br><span class="line">	int _age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Person s;</span><br><span class="line">	s.SetPersonInfo(&quot;Adam-Xi&quot;, &quot;男&quot;, 20);</span><br><span class="line">	s.PrintPersonInfo();</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
