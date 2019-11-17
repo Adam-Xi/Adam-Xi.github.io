@@ -40,6 +40,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Date(int year = 1900, int month = 1, int day = 1)</span><br><span class="line">	&#123;</span><br><span class="line">		_year = year;</span><br><span class="line">		_month = month;</span><br><span class="line">		_day = day;</span><br><span class="line">		cout &lt;&lt; &quot;Date(int,int,int):&quot; &lt;&lt; this &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	~Date()</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2、这两个运算符一般不需要重载，使用编译器生成的默认取地址的重载即可，只有特殊情况，才需要重载，比如想让别人获取到指定的内容</p>
 <p><a href="https://blog.csdn.net/qq_43746320/article/details/100869643">涵盖本篇博客所有知识的Date类</a></p>
+<p>以上</p>
 ]]></content>
       <categories>
         <category>C++</category>
