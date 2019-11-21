@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux,操作系统," />
+  <meta name="keywords" content="C++," />
 
 
 
@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="Linux权限概念Linux下有两种用户：超级用户（root）、普通用户  超级用户：可以在Linux系统下做任何事情，不受限制普通用户：在Linux下做有限的事情超级用户的命令提示符是”#”，普通用户的命令提示符是”$”  权限管理1、文件访问者的分类 文件和文件目录的所有者：u–User文件和文件目录的所有者所在的组的用户：g–Group其他用户：o–Others  简单的举个栗子区分一下三者">
-<meta name="keywords" content="Linux,操作系统">
+<meta name="description" content="C&#x2F;C++内存分布 说明1、栈又叫堆栈，非静态局部变量&#x2F;函数参数&#x2F;返回值等等，栈是向下增长的2、内存映射段是高效的I&#x2F;O映射方式，用于装载一个共享的动态内存库。用户可以使用系统接口创建共享内存，做进程间通信3、堆用于程序运行时动态内存分配 ，堆是向上增长的4、数据段—-存储全局数据和静态数据5、代码段—-可执行的代码&#x2F;只读常量 C中动态内存管理malloc&#x2F;calloc&#x2F;realloc&#x2F;free">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux权限">
-<meta property="og:url" content="http:&#x2F;&#x2F;adamxi.top&#x2F;2019&#x2F;11&#x2F;14&#x2F;Linux%E6%9D%83%E9%99%90&#x2F;index.html">
+<meta property="og:title" content="C++内存管理">
+<meta property="og:url" content="http:&#x2F;&#x2F;adamxi.top&#x2F;2019&#x2F;11&#x2F;21&#x2F;C++%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86&#x2F;index.html">
 <meta property="og:site_name" content="Adam-Xi">
-<meta property="og:description" content="Linux权限概念Linux下有两种用户：超级用户（root）、普通用户  超级用户：可以在Linux系统下做任何事情，不受限制普通用户：在Linux下做有限的事情超级用户的命令提示符是”#”，普通用户的命令提示符是”$”  权限管理1、文件访问者的分类 文件和文件目录的所有者：u–User文件和文件目录的所有者所在的组的用户：g–Group其他用户：o–Others  简单的举个栗子区分一下三者">
+<meta property="og:description" content="C&#x2F;C++内存分布 说明1、栈又叫堆栈，非静态局部变量&#x2F;函数参数&#x2F;返回值等等，栈是向下增长的2、内存映射段是高效的I&#x2F;O映射方式，用于装载一个共享的动态内存库。用户可以使用系统接口创建共享内存，做进程间通信3、堆用于程序运行时动态内存分配 ，堆是向上增长的4、数据段—-存储全局数据和静态数据5、代码段—-可执行的代码&#x2F;只读常量 C中动态内存管理malloc&#x2F;calloc&#x2F;realloc&#x2F;free">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019111414302950.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191114151335232.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-14T09:10:00.720Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019092322493418.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190924120836143.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-11-21T03:58:46.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019111414302950.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019092322493418.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://adamxi.top/2019/11/14/Linux权限/"/>
+  <link rel="canonical" href="http://adamxi.top/2019/11/21/C++内存管理/"/>
 
 
 
 
 
-  <title>Linux权限 | Adam-Xi</title>
+  <title>C++内存管理 | Adam-Xi</title>
   
 
 
@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://adamxi.top/2019/11/14/Linux%E6%9D%83%E9%99%90/">
+    <link itemprop="mainEntityOfPage" href="http://adamxi.top/2019/11/21/C++%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Adam-Xi">
@@ -307,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux权限</h1>
+          <h1 class="post-title" itemprop="name headline">C++内存管理</h1>
         
 
         <div class="post-meta">
@@ -319,8 +319,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T17:08:00+08:00">
-                2019-11-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-21T12:00:00+08:00">
+                2019-11-21
               </time>
             
 
@@ -342,8 +342,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
                   </a>
                 </span>
 
@@ -359,7 +359,7 @@
 
           
           
-             <span id="/2019/11/14/Linux%E6%9D%83%E9%99%90/" class="leancloud_visitors" data-flag-title="Linux权限">
+             <span id="/2019/11/21/C++%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="leancloud_visitors" data-flag-title="C++内存管理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k
+                  2.4k
                 </span>
               
 
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  9
                 </span>
               
             </div>
@@ -422,138 +422,71 @@
       
 
       
-        <h1 id="Linux权限概念"><a href="#Linux权限概念" class="headerlink" title="Linux权限概念"></a>Linux权限概念</h1><p>Linux下有两种用户：超级用户（root）、普通用户</p>
+        <h1 id="C-C-内存分布"><a href="#C-C-内存分布" class="headerlink" title="C/C++内存分布"></a>C/C++内存分布</h1><p><img src="https://img-blog.csdnimg.cn/2019092322493418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h6 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h6><p>1、栈又叫堆栈，非静态局部变量/函数参数/返回值等等，栈是向下增长的<br>2、内存映射段是高效的I/O映射方式，用于装载一个共享的动态内存库。用户可以使用系统接口创建共享内存，做进程间通信<br>3、堆用于程序运行时动态内存分配 ，堆是向上增长的<br>4、数据段—-存储全局数据和静态数据<br>5、代码段—-可执行的代码/只读常量</p>
+<h1 id="C中动态内存管理"><a href="#C中动态内存管理" class="headerlink" title="C中动态内存管理"></a>C中动态内存管理</h1><h3 id="malloc-calloc-realloc-free"><a href="#malloc-calloc-realloc-free" class="headerlink" title="malloc/calloc/realloc/free"></a>malloc/calloc/realloc/free</h3><blockquote>
+<p>void* malloc (size_t size);<br>【分配内存块】<br>分配一块内存大小为size的块，并返回一个指向该块开头的指针。<br>新分配的内存块的内容未初始化，剩余的值不确定。<br>如果size为零，则返回值取决于特定的库实现（它可以是null指针，也可以不是null指针），但是不得取消对返回的指针的引用。</p>
+</blockquote>
 <blockquote>
-<p>超级用户：可以在Linux系统下做任何事情，不受限制<br>普通用户：在Linux下做有限的事情<br>超级用户的命令提示符是”#”，普通用户的命令提示符是”$”</p>
+<p>void* calloc (size_t num, size_t size);<br>【分配和零初始化内存块】<br>num—&gt;要分配的元素数；  size—&gt;每个元素的大小<br>为一个num元素数组分配一个内存块，每个元素的大小为字节长，并将其所有位初始化为零。<br>有效的结果是分配了一个零初始化的(num*size)字节存储块。<br>如果size为零，则返回值取决于特定的库实现（它可以是null指针，也可以不是null指针），但是不得取消对返回的指针的引用。</p>
 </blockquote>
-<h1 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h1><h3 id="1、文件访问者的分类"><a href="#1、文件访问者的分类" class="headerlink" title="1、文件访问者的分类"></a>1、文件访问者的分类</h3><blockquote>
-<p>文件和文件目录的所有者：u–User<br>文件和文件目录的所有者所在的组的用户：g–Group<br>其他用户：o–Others</p>
-</blockquote>
-<p>简单的举个栗子区分一下三者：<br>就好像我有一台电脑，我可以使用我的电脑，我的室友也可以使用我的电脑，但是其他不相干的人怎么能使用我的电脑？（例子不算贴切，但足以说明问题）<br>上述例子中，电脑就是该文件，我就是文件的所有者，我的室友就是文件的所有组用户，其他不相干的人就是其他用户</p>
-<h3 id="2、文件类型和访问权限"><a href="#2、文件类型和访问权限" class="headerlink" title="2、文件类型和访问权限"></a>2、文件类型和访问权限</h3><p>下图是我的一个目录中的文件信息（使用ls -l指令列出文件的详细信息）：<br><img src="https://img-blog.csdnimg.cn/2019111414302950.png" alt="file type"><br>其中：<br>1、第一位表示文件类型，当前目录中显示的文件类型有两种，为“-”和“d”</p>
 <blockquote>
-<p>各文件类型表示的含义<br>d：文件夹<br>-：普通文件<br>l：软链接，类似windows的快捷方式<br>b：块设备文件，如硬盘、光驱等<br>p：管道文件<br>c：字符设备文件，如屏幕等串口设备<br>s：套接口文件</p>
+<p>void* realloc (void* ptr, size_t size);<br>【重新分配内存块】<br>更改ptr指向的内存块的大小。<br>若ptr指向为之前开辟的一片空间，那么若num小于等于原空间的大小，只会将原空间后面多出的部分舍弃，返回原空间的首地址即可。<br>若num大于原空间的大小，且若在原空间后面开辟空间的话，会影响其他空间的内容，该函数会将存储块移动到一个新的位置，并返回新位置的地址。<br>即使将存储块移动到新位置，该存储块的内容也会保留到新旧大小中的较小者。如果新的大小越大，则新分配的部分的值是不确定的。<br>在这种情况下ptr为空指针，该函数的行为像的malloc，分配一个新的大小为字节的块，并返回一个指向其开头的指针。</p>
 </blockquote>
-<p>2、紧跟其后的9位字符表示权限，如第一个文件形如“rw-rw-r–”</p>
 <blockquote>
-<p>基本权限：<br>读(r)：read，对于文件而言，具有读取文件内容的权限；对于目录而言，具有浏览该目录信息的权限<br>写(w)：write，对于文件而言，具有修改文件内容的权限；对于目录而言，具有删除移动目录内的文件的权限<br>执行(x)：execute，对文件而言，具有执行文件的权限；对于目录而言，具有进入目录的权限<br>“<strong>-</strong>”：表示不具有该项权限<br><br/><br>解析Linux下文件权限：<br>权限前三位表示文件所有者的权限<br>权限中间三位表示文件所属用户组的权限<br>权限后三位表示其他用户的权限</p>
+<p>void free (void* ptr);<br>【解除分配内存块】<br>先前经malloc/calloc/realloc调用分配的一块内存会被释放，使其再次可用于进一步分配。<br>如果ptr不指向分配有上述功能的内存块，则会导致未定义的行为。<br>如果ptr是空指针，则该函数不执行任何操作。<br>【注意】此函数不会更改ptr本身的值，因此它仍指向相同（现在无效）的位置。</p>
 </blockquote>
-<p>3、其后，跟着的分别为：连接数，所属用户，所属用户组，文件大小，文件最新修改日期，文件名<br><img src="https://img-blog.csdnimg.cn/20191114151335232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="file"></p>
-<h3 id="文件权限值的表示方法"><a href="#文件权限值的表示方法" class="headerlink" title="文件权限值的表示方法"></a>文件权限值的表示方法</h3><table>
+<h3 id="VS下malloc的底层结构"><a href="#VS下malloc的底层结构" class="headerlink" title="VS下malloc的底层结构"></a>VS下malloc的底层结构</h3><p><img src="https://img-blog.csdnimg.cn/20190924120836143.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>由此可知，malloc有额外的空间浪费</p>
+<h1 id="C-中动态内存管理"><a href="#C-中动态内存管理" class="headerlink" title="C++中动态内存管理"></a>C++中动态内存管理</h1><p>C语言内存管理方式在C++中可以继续使用，但是有些地方就无能为力而且使用起来比较麻烦，因此C++又提出了自己的内存管理方式：<strong>通过new和delete操作符进行动态内存管理</strong></p>
+<h3 id="new-delete操作内置类型"><a href="#new-delete操作内置类型" class="headerlink" title="new/delete操作内置类型"></a>new/delete操作内置类型</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//动态申请一个int类型的空间</span></span><br><span class="line">	<span class="keyword">int</span> * ptr1 = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line">	<span class="comment">//动态申请一个int类型的空间，并初始化为10</span></span><br><span class="line">	<span class="keyword">int</span> * ptr2 = <span class="keyword">new</span> <span class="keyword">int</span>(<span class="number">10</span>);</span><br><span class="line">	<span class="comment">//动态申请10个连续的int类型的空间</span></span><br><span class="line">	<span class="keyword">int</span> * ptr3 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">	<span class="comment">//动态申请10个连续的int类型空间，并都初始化为1</span></span><br><span class="line">	<span class="keyword">int</span> * ptr4 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>]&#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//释放</span></span><br><span class="line">	<span class="keyword">delete</span> ptr1;</span><br><span class="line">	<span class="keyword">delete</span> ptr2;</span><br><span class="line">	<span class="keyword">delete</span>[] ptr3;</span><br><span class="line">	<span class="keyword">delete</span>[] ptr4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>【注意】<br>申请和释放单个元素的空间，使用new和delete操作符； 申请和释放连续的空间，使用new[]和delete[]</p>
+<h3 id="new和delete操作自定义类型"><a href="#new和delete操作自定义类型" class="headerlink" title="new和delete操作自定义类型"></a>new和delete操作自定义类型</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Test()</span><br><span class="line">		: _data(<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Test(): "</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	~Test()</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"~Test(): "</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> _data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Test1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//申请单个Test类型的空间</span></span><br><span class="line">	Test * p1 = (Test *) <span class="built_in">malloc</span> (<span class="keyword">sizeof</span>(Test));</span><br><span class="line">	<span class="built_in">free</span>(p1);</span><br><span class="line">	<span class="comment">//申请10个Test类型的空间</span></span><br><span class="line">	Test * p2 = (Test *) <span class="built_in">malloc</span> (<span class="number">10</span> * <span class="keyword">sizeof</span>(Test));</span><br><span class="line">	<span class="built_in">free</span>(p2);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Test2</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//申请单个Test类型的对象</span></span><br><span class="line">	Test * p1 = <span class="keyword">new</span> Test;</span><br><span class="line">	<span class="keyword">delete</span> p1;</span><br><span class="line">	<span class="comment">//申请10个Test类型的对象</span></span><br><span class="line">	Test * p2 = <span class="keyword">new</span> Test[<span class="number">10</span>];</span><br><span class="line">	<span class="keyword">delete</span>[] p2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>【注意】<br>在申请自定义类型的空间时，new会调用构造函数，delete会调用析构函数，而malloc和free不会，申请和释放的只是一块大小与对象相同的内存空间<br>malloc/free 和 new/delete都是成对存在的，需要匹配使用。若未匹配使用，对于内置类型无影响，但对于自定义类型，只要涉及到连续申请释放，程序必然会崩溃</p>
+<h3 id="operator-new和operator-delete"><a href="#operator-new和operator-delete" class="headerlink" title="operator new和operator delete"></a>operator new和operator delete</h3><p>new和delete是用户进行动态内存申请和释放的操作符<br>operator new和operator delete是系统提供的全局函数<br>new在底层调用operator new来申请空间，delete在底层通过operator delete来释放空间</p>
+<p>operator new: 该函数实际通过malloc来申请空间，当malloc申请成功时直接返回；申请空间失败，抛出异常，除非用户设置了空间不足应对措施<br>operator delete：该函数最终是是通过free来释放空间的</p>
+<h3 id="new-和-delete实现原理"><a href="#new-和-delete实现原理" class="headerlink" title="new 和 delete实现原理"></a>new 和 delete实现原理</h3><h6 id="内置类型"><a href="#内置类型" class="headerlink" title="内置类型"></a>内置类型</h6><p>如果申请的是内置类型的空间，new和malloc，delete和free基本类似，不同的地方是：new/delete申请和释放的是单个元素的空间，new[]和delete[]申请和释放的是连续空间，而且new在申请空间失败时会抛出异常。malloc则会返回NULL</p>
+<h6 id="自定义类型"><a href="#自定义类型" class="headerlink" title="自定义类型"></a>自定义类型</h6><p><strong>new</strong><br>1、调用operator new函数申请空间<br>2、在申请空间上执行构造函数，完成对象的构造<br><strong>delete</strong><br>1、在空间上执行析构函数，完成对象中资源的清理工作<br>2、调用operator delete函数释放对象的空间<br><strong>new T[N]</strong><br>1、调用operator new[] 函数，在operator new[]中实际调用operator new函数完成N-1个对象空间的申请<br>2、在申请的空间上执行N次构造函数<br><strong>delete[]</strong><br>1、在释放的对象空间上执行N次析构函数，完成N个对象中资源的清理<br>2、调用 operator delete[]释放空间，实际在operator delete[]中调用operator delete来释放空间</p>
+<h3 id="定位new表达式（placement-new）"><a href="#定位new表达式（placement-new）" class="headerlink" title="定位new表达式（placement-new）"></a>定位new表达式（placement-new）</h3><p>定位new表达式是在已分配的原始内存空间中调用构造函数初始化一个对象</p>
+<p>使用格式：<br>new (place_address) type 或者 new (place_address) type (initializer-list)<br>place_address必须是一个指针，initializer-list 是类型的初始化列表</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// placement-new</span></span><br><span class="line"><span class="comment">// 定位new表达式：在已经存在的空间上执行构造函数</span></span><br><span class="line"><span class="comment">// 语法： new(地址) Test(参数);</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Test(<span class="keyword">int</span> data)</span><br><span class="line">	&#123;</span><br><span class="line">		_data = <span class="number">10</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Test():"</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	~Test()</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"~Test():"</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> _data;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">用来申请空间的new操作符---C++提供的关键字---专门用来申请空间</span></span><br><span class="line"><span class="comment">    1. 调用void* operator new(size_t size)</span></span><br><span class="line"><span class="comment">          &#123;</span></span><br><span class="line"><span class="comment">	          // 调用malloc循环申请 + 空间不足应对措施</span></span><br><span class="line"><span class="comment">	      &#125;</span></span><br><span class="line"><span class="comment">    2. 调用构造函数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> void* operator new(size_t size)是一个函数，一般情况下不需要自己给出,除非需要定制特殊功能</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">定位new表达式：</span></span><br><span class="line"><span class="comment">  new(p) T</span></span><br><span class="line"><span class="comment">    1. void* operator new(size_t size, void* where)</span></span><br><span class="line"><span class="comment">	   &#123;</span></span><br><span class="line"><span class="comment">	        return where;</span></span><br><span class="line"><span class="comment">	   &#125;</span></span><br><span class="line"><span class="comment">	2. 执行构造函数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Test* pt = (Test*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Test));</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 只需在pt指向的空间上执行构造函数</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	定位new表达式：调用operator new</span></span><br><span class="line"><span class="comment">	void* operator new(size_t size, void* where)</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">	     return where;</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="keyword">new</span>(pt) Test(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//delete pt;</span></span><br><span class="line">	pt-&gt;~Test();</span><br><span class="line">	<span class="built_in">free</span>(pt);</span><br><span class="line">	<span class="comment">// 需要将pt指向的空间当成对象来用</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="malloc-free-amp-amp-new-delete"><a href="#malloc-free-amp-amp-new-delete" class="headerlink" title="malloc/free &amp;&amp; new/delete"></a>malloc/free &amp;&amp; new/delete</h1><h3 id="同："><a href="#同：" class="headerlink" title="同："></a>同：</h3><p>都是从堆上申请空间，并且需要用户手动释放</p>
+<h3 id="异："><a href="#异：" class="headerlink" title="异："></a>异：</h3><table>
 <thead>
 <tr>
-<th>Linux表示</th>
-<th>说明</th>
-<th>二进制</th>
-<th>八进制</th>
+<th>malloc/free</th>
+<th>new/delete</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>r–</td>
-<td>只读</td>
-<td>100</td>
-<td>4</td>
+<td>malloc/free 是函数</td>
+<td>new/delete 是操作符</td>
 </tr>
 <tr>
-<td>-w-</td>
-<td>只写</td>
-<td>010</td>
-<td>2</td>
+<td>malloc申请的空间不会初始化</td>
+<td>new可以初始化</td>
 </tr>
 <tr>
-<td>–x</td>
-<td>仅可执行</td>
-<td>001</td>
-<td>1</td>
+<td>malloc申请空间时，需要手动计算空间大小并传递</td>
+<td>new只需在其后跟上空间的类型即可</td>
 </tr>
 <tr>
-<td>rw-</td>
-<td>可读可写</td>
-<td>110</td>
-<td>6</td>
+<td>malloc返回值为void *，在使用时必须强转</td>
+<td>new不需要，因为new后面跟的是空间的类型</td>
 </tr>
 <tr>
-<td>r-x</td>
-<td>可读可执行</td>
-<td>101</td>
-<td>5</td>
+<td>malloc申请空间失败时，返回的是NULL，因此使用时必须判空</td>
+<td>new不需要，但是new需要捕获异常</td>
 </tr>
 <tr>
-<td>-wx</td>
-<td>可写可执行</td>
-<td>011</td>
-<td>3</td>
-</tr>
-<tr>
-<td>rwx</td>
-<td>可读可写可执行</td>
-<td>111</td>
-<td>7</td>
-</tr>
-<tr>
-<td>---</td>
-<td>无权限</td>
-<td>000</td>
-<td>0</td>
-</tr>
-<tr>
-<td>### 文件访问权限的设置方法</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>#### chmod</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>功能：设置文件的访问权限</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>格式：chmod [参数] 权限 文件名</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>常用选项：</td>
-<td></td>
-<td></td>
-<td></td>
+<td>申请自定义类型对象时，malloc/free只会开辟空间，不会调用构造函数和析构函数</td>
+<td>new在申请看空间后会调用构造函数完成对象的初始化，delete在释放空间前会调用析构函数完成空间中资源的清理</td>
 </tr>
 </tbody></table>
-<blockquote>
-<p>R：递归修改目录文件的权限<br>说明：只有文件的拥有者和root才可以改变文件的权限</p>
-</blockquote>
-<p>1、用户标识符+/- = 权限字符</p>
-<blockquote>
-<p>+：向权限范围增加权限代号所表示的权限<br>-：向权限范围取消代号所表示的权限<br>=：向权限范围赋予权限代号所表示的权限<br><br/><br>用户符号：<br>u：拥有者<br>g：拥有者同组用<br>o：其他用户<br>a：所有用户<br>例：<br>//对test.cpp文件给其他用户增加写权限<br>chmod o+w ./test.cpp</p>
-</blockquote>
-<p>2、三位8进制数字</p>
-<blockquote>
-<p>//对当前目录下的test.cpp文件所有者和所属组用户增加权限至可读可写不可执行权限<br>chmod 666 ./test.cpp<br>//对当前目录下的test.cpp文件的所有者和所属组和其他用户都增加权限至可读可写不可执行<br>chmod 777 ./test.cpp</p>
-</blockquote>
-<h4 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h4><p>功能：修改文件的拥有者<br>格式：chown [参数] 用户名 文件名<br>举例:</p>
-<blockquote>
-<p>//修改文件test.cpp的所有者为adam-xi（用户名）<br>chown adam-xi test.cpp<br>//修改目录work下的所有文件的所有者为adam-xi<br>chown -R adam-xi work</p>
-</blockquote>
-<h4 id="chgrp"><a href="#chgrp" class="headerlink" title="chgrp"></a>chgrp</h4><p>功能：修改文件或目录的所属组<br>格式：chgrp [参数] 用户组名 文件名<br>举例：</p>
-<blockquote>
-<p>//修改当前目录下test.cpp的所属组用户为adam-xi<br>chgrp adam-xi ./test.cpp</p>
-</blockquote>
-<h4 id="umask"><a href="#umask" class="headerlink" title="umask"></a>umask</h4><p>功能：查看或修改文件掩码<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新建文件默认权限为0666<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新建目录默认权限为0777<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但实际上，我们所创建的文件或目录，看到的权限往往不是上面的值，因为创建文件或目录时还要受到umask的影响。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;假设默认权限是mask，则实际创建出来的文件权限是：mask &amp; ~umask<br>格式：umask 权限值<br>说明：将现有的存取权限减去权限掩码后，即可产生创建文件是预设权限。root的默认掩码值为0022，普通用户默认为0002</p>
-<h1 id="目录权限"><a href="#目录权限" class="headerlink" title="目录权限"></a>目录权限</h1><blockquote>
-<p>可执行权限：如果目录没有可执行权限，则无法cd到目录中<br>可读权限：如果目录没有可读权限，则无法用ls等命令查看目录中的文件内容<br>可写权限：如果目录没有可写权限，则无法在目录中创建文件，也无法在目录中删除文件</p>
-</blockquote>
-<h3 id="粘滞位"><a href="#粘滞位" class="headerlink" title="粘滞位"></a>粘滞位</h3><p>命令：<strong>chmod +t</strong><br>当一个目录被设置为“粘滞位”，则该目录下的文件只能由</p>
-<blockquote>
-<p>一、超级管理员删除<br>二、该目录的所有者删除<br>三、该文件的所有者删除<br><br/><br>以上。</p>
-</blockquote>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p>设计一个类，该类只能在堆上创建对象</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//思路：</span></span><br><span class="line"><span class="comment">//1、将类的构造函数私有，拷贝构造函数声明成私有。防止别人调用拷贝在栈上生成对象</span></span><br><span class="line"><span class="comment">//2、提供一个静态的成员函数，在该静态成员函数中完成堆对象的创建</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Object</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">static</span> Object* <span class="title">GetObject</span><span class="params">(<span class="keyword">int</span> data)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Object(data);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	~Object()</span><br><span class="line">	&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// C++98</span></span><br><span class="line"><span class="comment">//private:</span></span><br><span class="line"><span class="comment">//	Object(const Object&amp; o);</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// C++11</span></span><br><span class="line">	<span class="comment">// 1. 释放new的空间</span></span><br><span class="line">	<span class="comment">// 2. 在默认成员函数后跟上=delete, 删除默认的拷贝构造函数</span></span><br><span class="line">	Object(<span class="keyword">const</span> Object&amp; o) = <span class="keyword">delete</span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	Object(<span class="keyword">int</span> data)</span><br><span class="line">	&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用户</span></span><br><span class="line"><span class="comment">//Object::Object(const Object&amp;)</span></span><br><span class="line"><span class="comment">//&#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Object* p= Object::GetObject(<span class="number">10</span>);</span><br><span class="line">	<span class="keyword">delete</span> p;</span><br><span class="line"></span><br><span class="line">	<span class="function">Object <span class="title">o</span><span class="params">(*p)</span></span>;  <span class="comment">// 拷贝构造函数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -580,12 +513,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/11/14/Linux%E6%9D%83%E9%99%90/">Linux权限</a></p>
+  <p><span>本文标题:</span><a href="/2019/11/21/C++%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">C++内存管理</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Adam-Xi 的个人博客">Adam-Xi</a></p>
-  <p><span>发布时间:</span>2019年11月14日 - 17:11</p>
-  <p><span>最后更新:</span>2019年11月14日 - 17:11</p>
-  <p><span>原始链接:</span><a href="/2019/11/14/Linux%E6%9D%83%E9%99%90/" title="Linux权限">http://adamxi.top/2019/11/14/Linux%E6%9D%83%E9%99%90/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://adamxi.top/2019/11/14/Linux%E6%9D%83%E9%99%90/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年11月21日 - 12:11</p>
+  <p><span>最后更新:</span>2019年11月21日 - 11:11</p>
+  <p><span>原始链接:</span><a href="/2019/11/21/C++%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" title="C++内存管理">http://adamxi.top/2019/11/21/C++%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://adamxi.top/2019/11/21/C++%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -616,9 +549,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
-          
-            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"><i class="fa fa-tag"></i> 操作系统</a>
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
           
         </div>
       
@@ -646,8 +577,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/12/C++%E5%88%9D%E6%8E%A2/" rel="next" title="C++初探">
-                <i class="fa fa-chevron-left"></i> C++初探
+              <a href="/2019/11/17/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1(%E4%B8%89)/" rel="next" title="类与对象(三)">
+                <i class="fa fa-chevron-left"></i> 类与对象(三)
               </a>
             
           </div>
@@ -655,10 +586,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/17/C++%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1(%E4%B8%80)/" rel="prev" title="C++类与对象(一)">
-                C++类与对象(一) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -842,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux权限概念"><span class="nav-number">1.</span> <span class="nav-text">Linux权限概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#权限管理"><span class="nav-number">2.</span> <span class="nav-text">权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、文件访问者的分类"><span class="nav-number">2.0.1.</span> <span class="nav-text">1、文件访问者的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、文件类型和访问权限"><span class="nav-number">2.0.2.</span> <span class="nav-text">2、文件类型和访问权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件权限值的表示方法"><span class="nav-number">2.0.3.</span> <span class="nav-text">文件权限值的表示方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#chown"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">chown</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chgrp"><span class="nav-number">2.0.3.2.</span> <span class="nav-text">chgrp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#umask"><span class="nav-number">2.0.3.3.</span> <span class="nav-text">umask</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录权限"><span class="nav-number">3.</span> <span class="nav-text">目录权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#粘滞位"><span class="nav-number">3.0.1.</span> <span class="nav-text">粘滞位</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-C-内存分布"><span class="nav-number">1.</span> <span class="nav-text">C/C++内存分布</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#说明"><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text">说明</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C中动态内存管理"><span class="nav-number">2.</span> <span class="nav-text">C中动态内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#malloc-calloc-realloc-free"><span class="nav-number">2.0.1.</span> <span class="nav-text">malloc/calloc/realloc/free</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VS下malloc的底层结构"><span class="nav-number">2.0.2.</span> <span class="nav-text">VS下malloc的底层结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-中动态内存管理"><span class="nav-number">3.</span> <span class="nav-text">C++中动态内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#new-delete操作内置类型"><span class="nav-number">3.0.1.</span> <span class="nav-text">new/delete操作内置类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#new和delete操作自定义类型"><span class="nav-number">3.0.2.</span> <span class="nav-text">new和delete操作自定义类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#operator-new和operator-delete"><span class="nav-number">3.0.3.</span> <span class="nav-text">operator new和operator delete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#new-和-delete实现原理"><span class="nav-number">3.0.4.</span> <span class="nav-text">new 和 delete实现原理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#内置类型"><span class="nav-number">3.0.4.0.0.1.</span> <span class="nav-text">内置类型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#自定义类型"><span class="nav-number">3.0.4.0.0.2.</span> <span class="nav-text">自定义类型</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位new表达式（placement-new）"><span class="nav-number">3.0.5.</span> <span class="nav-text">定位new表达式（placement-new）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#malloc-free-amp-amp-new-delete"><span class="nav-number">4.</span> <span class="nav-text">malloc/free &amp;&amp; new/delete</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同："><span class="nav-number">4.0.1.</span> <span class="nav-text">同：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异："><span class="nav-number">4.0.2.</span> <span class="nav-text">异：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题"><span class="nav-number">4.0.3.</span> <span class="nav-text">例题</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
