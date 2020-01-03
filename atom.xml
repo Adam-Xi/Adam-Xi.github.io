@@ -412,6 +412,32 @@
   </entry>
   
   <entry>
+    <title>STL之list</title>
+    <link href="http://adamxi.top/2019/01/03/STL%E4%B9%8Blist/"/>
+    <id>http://adamxi.top/2019/01/03/STL%E4%B9%8Blist/</id>
+    <published>2019-01-03T13:00:00.000Z</published>
+    <updated>2020-01-03T13:00:23.813Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="list介绍"><a href="#list介绍" class="headerlink" title="list介绍"></a>list介绍</h3><p>1、list是可以在常数范围内在任意位置进行插入删除的序列式容器，并且该容器可以<strong>前后双向迭代</strong><br>2、其底层结构：<strong>带头结点的双向循环链表</strong><br>3、list和forward_list相似：但是forword_list是单链表，只能朝前迭代<br>4、与其他容器相比，<strong>list在任意位置插入删除更加高效</strong>，但最大的缺陷是<strong>不能进行任意位置元素的访问</strong>，若要访问第pos位元素，需要从头节点开始朝前或朝后进行遍历，直到第pos位为止</p><h3 id="list的接口"><a href="#list的接口" class="headerlink" title="list的接口"></a>list的接口</h3><p>list中的接口如下所示：<br><img src="https://img-blog.csdnimg.cn/20191025182941207.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h3 id="list中迭代器失效问题"><a href="#list中迭代器失效问题" class="headerlink" title="list中迭代器失效问题"></a>list中迭代器失效问题</h3><p>先来解释一下什么是迭代器：<br>迭代器，是一种可以检查容器内元素并遍历元素的类型，它可以被理解为类似指针的类型<br>每种容器都有自己的迭代器，比如vector、deque提供的是随机访问迭代器，list提供的是双向迭代器，等…</p><p>迭代器失效问题：<br>迭代器失效即迭代器所指向的节点无效，即该节点被删除了，因为list的底层结构为带头结点的双向循环链表，因此<strong>在list中进行插入时是不会导致list的迭代器失效的</strong>，<strong>只有在删除时才会失效</strong>，<strong>并且失效的只是指向被删除节点的迭代器，其他迭代器不会受到影响</strong><br>换一种思维理解，既然先前提过list类似指针，那么当一个指针指向的空间被释放了，那么指针所指向的内容就是无效的，指针就会变成野指针，所以类比迭代器失效问题，迭代器所指向的节点被释放了，那么该节点的迭代器就是一个无效的迭代器了，此时若要通过该迭代器访问该节点，那么就会出现迭代器失效问题，编译器报错</p><p>传送门：<a href="https://blog.csdn.net/qq_43746320/article/details/102537111">list的模拟实现</a></p><hr><h1 id="THE-END"><a href="#THE-END" class="headerlink" title="THE END"></a>THE END</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;list介绍&quot;&gt;&lt;a href=&quot;#list介绍&quot; class=&quot;headerlink&quot; title=&quot;list介绍&quot;&gt;&lt;/a&gt;list介绍&lt;/h3&gt;&lt;p&gt;1、list是可以在常数范围内在任意位置进行插入删除的序列式容器，并且该容器可以&lt;strong&gt;前后双向迭代
+      
+    
+    </summary>
+    
+    
+      <category term="C++" scheme="http://adamxi.top/categories/C/"/>
+    
+    
+      <category term="C++" scheme="http://adamxi.top/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>STL之vector</title>
     <link href="http://adamxi.top/2019/01/03/STL%E4%B9%8Bvector/"/>
     <id>http://adamxi.top/2019/01/03/STL%E4%B9%8Bvector/</id>
