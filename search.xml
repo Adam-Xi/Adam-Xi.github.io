@@ -873,4 +873,21 @@ int main()
 <h3 id="deque的应用场景"><a href="#deque的应用场景" class="headerlink" title="deque的应用场景"></a>deque的应用场景</h3><p>deque在序列式容器中比较鸡肋，因为如果只是简单的存储元素，使用vector即可，如果对元素任意位置进行插入或者删除操作比较多，使用list即可，所以一般很少去使用deque，它最大的应用，就是作为标准库中stack和queue的底层结构<br>详见<a href="https://blog.csdn.net/qq_43746320/article/details/102749009">库函数stack的模拟实现</a>和<a href="https://blog.csdn.net/qq_43746320/article/details/102749043">库函数queue的模拟实现</a></p>
 <h1 id="THE-END"><a href="#THE-END" class="headerlink" title="THE END"></a>THE END</h1>]]></content>
   </entry>
+  <entry>
+    <title>STL之vector</title>
+    <url>/2019/01/03/STL%E4%B9%8Bvector/</url>
+    <content><![CDATA[<h3 id="vector介绍"><a href="#vector介绍" class="headerlink" title="vector介绍"></a>vector介绍</h3><p>简言之，vector是表示可变大小数组的容器序列<br>其底层结构：可存放任意数据类型的动态类型顺序表</p>
+<h6 id="具体介绍如下："><a href="#具体介绍如下：" class="headerlink" title="具体介绍如下："></a>具体介绍如下：</h6><p>1、和数组一样，vector也是用一片连续空间存储数组，意味着它可以和数组一样<strong>高效地</strong>通过下标访问每个空间中的元素，但和数组不同的是，它的大小可以动态改变，而且是被容器自动改变，无需使用者关心<br>2、本质讲，vector动态分配数组来存储它的元素。当新元素插入时，vector需要检测其空闲空间是否足够存放，若足够，则移动元素插入，若不足，则会分配一个新的数组，然后将全部元素移入这个新的数组中，再进行插入。所以就时间而言，其代价相对较高<br>3、分配空间策略：vector会分配一些额外的空间以适应可能的增长，因为存储空间比实际需要的存储空间更大。不同的库采用不同的策略权衡空间的使用和重新分配。如VS下vector容量是按照约等<strong>1.5倍增长</strong>的，g++是按<strong>2倍增长</strong>的<br>4、vector占用了更多的存储空间，为了获得管理存储空间的能力，并且以一种有效的方式动态增长<br>5、与其他动态序列容器相比，vector在<strong>访问元素时更加高效</strong>，在末尾插入删除元素相对高效，但是对于不在末尾的插入删除，效率较低。比起list和forward_list统一的迭代器和引用更好</p>
+<h3 id="vector方法"><a href="#vector方法" class="headerlink" title="vector方法"></a>vector方法</h3><p>由于在之前博客<a href="https://blog.csdn.net/qq_43746320/article/details/101452911">string</a>中已经详细列举了大量的string方法，此处不再赘述<br><img src="https://img-blog.csdnimg.cn/20191025173108398.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="vector扩容机制"><a href="#vector扩容机制" class="headerlink" title="vector扩容机制"></a>vector扩容机制</h3><p>值得一提的是，vector既然是连续的空间且大小可变，那么其底层的扩容机制到底如何实现？如下：<br><img src="https://img-blog.csdnimg.cn/20191025181043119.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>传送门：<a href="https://blog.csdn.net/qq_43746320/article/details/102532478">vector的模拟实现</a></p>
+<hr>
+<h1 id="THE-END"><a href="#THE-END" class="headerlink" title="THE END"></a>THE END</h1>]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
 </search>
