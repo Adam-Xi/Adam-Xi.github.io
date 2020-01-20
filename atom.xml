@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adamxi.top/"/>
-  <updated>2019-12-17T15:33:07.436Z</updated>
+  <updated>2020-01-20T13:08:13.830Z</updated>
   <id>http://adamxi.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STL之deque</title>
+    <link href="http://adamxi.top/2020/01/20/C++STL%E4%B9%8Bdeque/"/>
+    <id>http://adamxi.top/2020/01/20/C++STL%E4%B9%8Bdeque/</id>
+    <published>2020-01-20T13:03:32.000Z</published>
+    <updated>2020-01-20T13:08:13.830Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="deque介绍"><a href="#deque介绍" class="headerlink" title="deque介绍"></a>deque介绍</h3><p>1、deque是动态大小的序列式容器，可以向两端进行扩容或压缩<br>2、特定的库可以以不同的方式实现deque，但通常都是一种动态数组。不论在何种情况下，它都允许通过随机访问迭代器直接访问单个元素<br>3、deque提供了一些与vector相似的功能，但deque在头部和尾部进行数据插入和删除操作更加高效。与vector不同的是，deque不能保证所有元素都存储在连续的空间中，在deque中通过指针加偏移量的方式访问元素可能导致非法的操作</p><p>就我而言，其实，相比其他容器而言，deque比较“鸡肋”（个人观点），若要说遍历元素，用vector足以完成，若要说插入删除，list也够用，而且相比来说，deque性能在这两方面性能较差<br><img src="https://img-blog.csdnimg.cn/20191025194344163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h3 id="deque的接口"><a href="#deque的接口" class="headerlink" title="deque的接口"></a>deque的接口</h3><p><img src="https://img-blog.csdnimg.cn/20191025194441955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzQ2MzIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h3 id="deque的应用场景"><a href="#deque的应用场景" class="headerlink" title="deque的应用场景"></a>deque的应用场景</h3><p>deque在序列式容器中比较鸡肋，因为如果只是简单的存储元素，使用vector即可，如果对元素任意位置进行插入或者删除操作比较多，使用list即可，所以一般很少去使用deque，它最大的应用，就是作为标准库中stack和queue的底层结构<br>详见<a href="https://blog.csdn.net/qq_43746320/article/details/102749009">库函数stack的模拟实现</a>和<a href="https://blog.csdn.net/qq_43746320/article/details/102749043">库函数queue的模拟实现</a></p><hr><h1 id="THE-END"><a href="#THE-END" class="headerlink" title="THE END"></a>THE END</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;deque介绍&quot;&gt;&lt;a href=&quot;#deque介绍&quot; class=&quot;headerlink&quot; title=&quot;deque介绍&quot;&gt;&lt;/a&gt;deque介绍&lt;/h3&gt;&lt;p&gt;1、deque是动态大小的序列式容器，可以向两端进行扩容或压缩&lt;br&gt;2、特定的库可以以不同的方式实
+      
+    
+    </summary>
+    
+    
+      <category term="C++" scheme="http://adamxi.top/categories/C/"/>
+    
+    
+      <category term="C++" scheme="http://adamxi.top/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C++STL之string</title>
