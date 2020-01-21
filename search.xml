@@ -854,6 +854,28 @@ int main()
 <h1 id="THE-END"><a href="#THE-END" class="headerlink" title="THE END"></a>THE END</h1>]]></content>
   </entry>
   <entry>
+    <title>STL之STL</title>
+    <url>/2019/01/21/C++%E4%B9%8BSTL%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h1><p>STL：(Standard Template Library)<strong>标准模板库</strong>，是C++标准库的重要组成部分，不仅是一个可复用的组件库，而且是一个包罗数据结构与算法的软件框架<br>通俗的说，STL是对常见数据结构的封装，和一些通用的算法，即可以操作任意类型数据和任意数据结构的算法<br>具体来说，STL中包含了六大组件，即<strong>容器</strong>、<strong>迭代器</strong>、<strong>算法</strong>、<strong>仿函数</strong>、<strong>空间配置器</strong>、<strong>配接器</strong>,下面是对六大容器的介绍</p>
+<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><p>容器：容器是管理数据的地方，它是STL的重要组成部分。<br>容器包含了序列式容器和关联式容器</p>
+<h6 id="序列式容器"><a href="#序列式容器" class="headerlink" title="序列式容器"></a>序列式容器</h6><p>1、string：字符串类型<br>2、vector：动态类型的顺序表<br>3、array：静态类型的顺序表(C++11)<br>4、list：带头结点的双向循环链表<br>5、forward_list：带头节点的单向循环链表(C++11)<br>6、deque：动态的二维数组</p>
+<h6 id="关联式容器"><a href="#关联式容器" class="headerlink" title="关联式容器"></a>关联式容器</h6><p>1、set：不重复元素的集合<br>2、multiset：类似set，但允许元素重复<br>3、map：关联数组，每个元素有两个数据项，map将一个数据项映射到另一个数据项中<br>4、multimap：类似map，但允许键值重复<br>5、unordered_set、unordered_multiset、unordered_map、unordered_multimap：分别类似集合、多重集合、映射、多重映射，但是用哈希表实现</p>
+<h6 id="其他类型容器"><a href="#其他类型容器" class="headerlink" title="其他类型容器"></a>其他类型容器</h6><p>1、bitset<br>2、valarray</p>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>迭代器是泛化的指针，通过迭代器，编程人员可以无需关心关心其内部结构而进行操作数据。根据它们操作方式的不同，可分为以下几种：<br>1、输入迭代器<br>2、输出迭代器<br>3、随机访问迭代器<br>4、前向迭代器<br>5、双向迭代器</p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>STL提供了一些通用类型的常见的算法，这些算法与数据类型和数据结构无关。例如排序和搜索算法，等等</p>
+<h3 id="仿函数"><a href="#仿函数" class="headerlink" title="仿函数"></a>仿函数</h3><p>也称为函数对象。将一个类的对象按照函数的方式进行使用，它可以定制函数功能，使之更加灵活。例如greater、less，等等</p>
+<h3 id="配置器"><a href="#配置器" class="headerlink" title="配置器"></a>配置器</h3><p>也称为容器适配器。它是一种设计模式（设计模式是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结），该中模式是将一个类的接口转换为客户希望的另一个接口<br>常用的配置器有stack、queue、priority_queue（因为每个容器在底层都有自己的实现方式，但是这三个在底层只是将其他容器进行了封装），等等</p>
+<h3 id="空间配置器"><a href="#空间配置器" class="headerlink" title="空间配置器"></a>空间配置器</h3><p>空间配置器是STL中提供的申请释放以及管理空间的组件，最具代表的空间配置器是allocator</p>
+<h1 id="STL的缺陷"><a href="#STL的缺陷" class="headerlink" title="STL的缺陷"></a>STL的缺陷</h1><p>1、STL库更新慢<br>2、没有支持线程安全，并发环境下需要自己加锁，且锁的粒度是比较大的<br>3、STL极度的追求效率，导致内部比较复杂<br>4、在极端情况下，STL会导致内存膨胀的问题<br>5、深拷贝问题，极端情况下，如果是百万级的数据，那么一次深拷贝就产生了几百万次的构造和析构</p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>STL之list</title>
     <url>/2019/01/03/STL%E4%B9%8Blist/</url>
     <content><![CDATA[<h3 id="list介绍"><a href="#list介绍" class="headerlink" title="list介绍"></a>list介绍</h3><p>1、list是可以在常数范围内在任意位置进行插入删除的序列式容器，并且该容器可以<strong>前后双向迭代</strong><br>2、其底层结构：<strong>带头结点的双向循环链表</strong><br>3、list和forward_list相似：但是forword_list是单链表，只能朝前迭代<br>4、与其他容器相比，<strong>list在任意位置插入删除更加高效</strong>，但最大的缺陷是<strong>不能进行任意位置元素的访问</strong>，若要访问第pos位元素，需要从头节点开始朝前或朝后进行遍历，直到第pos位为止</p>
